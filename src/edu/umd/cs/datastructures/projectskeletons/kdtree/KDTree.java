@@ -111,7 +111,7 @@ public class KDTree {
 	 * This queue will be empty if the tree contains only <tt>p</tt>.
 	 * @throws RuntimeException If <tt>m&lt;=0</tt>.
 	 */
-	public BoundedPriorityQueue<KDPoint> mNearestNeighbors(int m, KDPoint p){
+	public BoundedPriorityQueue<KDPoint> kNearestNeighbors(int m, KDPoint p){
 		throw exc;
 	}
 
