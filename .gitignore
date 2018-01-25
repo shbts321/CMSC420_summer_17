@@ -12,7 +12,7 @@
 .class
 
 # Go ahead and add these if you author in different languages.
-#*.{a,o,pyc,s} 
+#*.{a,o,pyc,s}
 
 # Hidden files of OSs
 *.~
@@ -32,3 +32,6 @@
 *.snm
 
 /doc/examples
+
+## Apple files
+.DS_Store
