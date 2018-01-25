@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 public class IntegerTimingClient {
 
     private static Random r = new Random();
-    private static int NUM_INTS = 100000;
+    private static final int NUM_INTS = 100000;
     private static int[] ints = IntStream.rangeClosed(1, NUM_INTS).toArray();
 
     public static void main(String[] args){
@@ -24,15 +24,17 @@ public class IntegerTimingClient {
         };
 
         for(Bag b: bags){
+            System.out.println("----------------------------------------------------------------");
             System.out.println("Running Integer experiments for " + b + ".");
             insertAll(ints, b);
-            b.shake(); // Not counting that for now. TODO: Do so if the results on timing accessing match intuition.
+            b.shake(); // Not counting that for now.
             long startingMillis = System.currentTimeMillis();
             loopthroughAll(b);
             long endingMillis = System.currentTimeMillis();
             System.out.println("For a " + b + ", looping through all elements took "
                     + (endingMillis - startingMillis) + " ms.");
             System.out.println("Finished Integer experiments for " + b + ".");
+            System.out.println("----------------------------------------------------------------");
         }
     }
 

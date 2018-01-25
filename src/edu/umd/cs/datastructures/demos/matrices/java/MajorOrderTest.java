@@ -3,16 +3,18 @@ package edu.umd.cs.datastructures.demos.matrices.java;
 import java.util.Random;
 import static edu.umd.cs.datastructures.demos.matrices.java.Dimension.*;
 
-/**<p><tt>MajorOrderTest</tt> is a simple app that tests the efficiency of performing operations across rows and columns in Java.</p>
+/**<p><tt>MajorOrderTest</tt> is a simple app that tests the efficiency
+ * of performing operations across rows and columns in Java.</p>
  * @author Jason
  */
 public class MajorOrderTest {
 
-    private static int N = 10000;
-    private static int WAIT = 1; // In seconds
+    private static final int N = 10000;
+    private static final int WAIT = 1; // In seconds
 
 
-    private static Random r = new Random(); // Supply long seed if you seek re-producibility of experiments
+    private static long SEED = 47;
+    private static Random r = new Random(SEED); // Supply long seed if you seek re-producibility of experiments
 
 
     /**
@@ -21,9 +23,9 @@ public class MajorOrderTest {
      */
     public static void main(String[] args){
 
-        double[][] M = randomMatrix(N);
-        sumThroughDimension(M, ROWS);
-        sumThroughDimension(M, COLUMNS);
+        double[][] M = randomMatrix(N); // The time this takes is not counted in our experiments, of course
+        sumThroughDimension(M, ROWS); // This is
+        sumThroughDimension(M, COLUMNS); // And this is.
         System.out.println("Good - bye!");
     }
 
