@@ -13,8 +13,8 @@ public class MajorOrderTest {
     private static final int WAIT = 1; // In seconds
 
 
-    private static long SEED = 47;
-    private static Random r = new Random(SEED); // Supply long seed if you seek re-producibility of experiments
+    private static final long SEED = 47;
+    private static final Random RNG = new Random(SEED); // Supply long seed if you seek re-producibility of experiments
 
 
     /**
@@ -49,7 +49,7 @@ public class MajorOrderTest {
         // Implicitly obeying row-major order
         for(int i = 0; i < dim; i++)
             for(int j = 0; j < dim; j++)
-                matrix[i][j] = r.nextDouble();
+                matrix[i][j] = RNG.nextDouble();
         return matrix;
     }
 

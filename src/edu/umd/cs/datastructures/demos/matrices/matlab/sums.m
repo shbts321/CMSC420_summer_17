@@ -1,4 +1,4 @@
-% A demo to demonstrate efficiency of column - based 
+% A demo to investigate efficiency of column - based 
 % operations in MATLAB as opposed to row - based operations.
 % This was first coded in a Windows machine running Terpware's 2017A.
 % on 05-26-2017
@@ -9,7 +9,7 @@ WAIT=2;
 
 % N X N matrix with 8 byte doubles
 % drawn uniformally from (0, 1) (non-inclusive):
-M = rand(N);
+M = rand(N) * 12000;
 
 
 fprintf('Summing matrix column-wise...\n');
